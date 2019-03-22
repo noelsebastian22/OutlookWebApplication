@@ -76,3 +76,38 @@ body{
 .mat-tab-label-active .mat-tab-label-content{
     border-bottom: 3px solid blue;
 }
+
+/* style for search box */
+
+.search-area{
+    float:left;
+}
+
+.search-area input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-right:0px;
+    float: left;
+    width: 80%;
+    background: #8ecdff;
+  }
+  
+ .search-area button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #8ecdff;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  
+.search-area ::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

@@ -14,6 +14,7 @@ import { EmailComponent } from './home/email-list/email/email.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DirectoryListService } from './services/directory-list/directory-list.service';
 import { EmailListService } from './services/email-list/email-list.service';
+import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { EmailListService } from './services/email-list/email-list.service';
     MatToolbarModule,
     MatSidenavModule,
     MatTreeModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     DirectoryListService,
