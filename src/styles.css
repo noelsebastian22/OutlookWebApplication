@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+mat-sidenav-container {
+    position: fixed;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;    
+};
+
+mat-sidenav {
+    background-color: green !important;
+};
