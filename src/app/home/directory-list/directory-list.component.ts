@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DirectoryListService } from 'src/app/services/directory-list/directory-list.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Directory } from 'src/app/models/directory.model';
 
 @Component({
   selector: 'app-directory-list',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectoryListComponent implements OnInit {
 
-  constructor() { }
+  directoryList: Directory;
+
+  constructor(private directoryListService: DirectoryListService) { }
 
   ngOnInit() {
+    this.getDirectoryList();
   }
 
+  private getDirectoryList(): void {
+    this.directoryListService.getDirectoryList().subscribe(this.getDirectoryListSuccess, this.getDirectoryListFailure);
+  }
+
+  private getDirectoryListSuccess = (directoryList: Directory) => {
+    this.directoryList = directoryList;
+  }
+
+  private getDirectoryListFailure = (error: HttpErrorResponse) => {
+    console.log("The get directory list api failed: ", error);
+  }
 }

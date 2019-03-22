@@ -1,0 +1,32 @@
+[
+    {
+        "dirId": 1,
+        "dirName": "Inbox",
+        "dirDesc": "Primary mail box",
+        "dirOrder": 1
+    },
+    {
+        "dirId": 2,
+        "dirName": "Sent Items",
+        "dirDesc": "sent mail box",
+        "dirOrder": 2
+    },
+    {
+        "dirId": 3,
+        "dirName": "Drafts",
+        "dirDesc": "saved mail box",
+        "dirOrder": 3
+    },
+    {
+        "dirId": 4,
+        "dirName": "Deleted Items",
+        "dirDesc": "mail box containing deleted mails",
+        "dirOrder": 4
+    },
+    {
+        "dirId": 5,
+        "dirName": "Junk Email",
+        "dirDesc": "mail box containing junk mails",
+        "dirOrder": 5
+    }
+]

@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  options: any = {
+    bottom: 0,
+    fixed: false,
+    top: 0
+  };
 
   constructor() { }
 
