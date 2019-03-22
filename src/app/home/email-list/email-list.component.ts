@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailListService } from 'src/app/services/email-list/email-list.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { EmailService } from 'src/app/services/email/email.service';
 
 @Component({
   selector: 'app-email-list',
@@ -11,7 +12,10 @@ export class EmailListComponent implements OnInit {
 
   emailList: any[];
 
-  constructor(private emailListService: EmailListService) { }
+  constructor(
+    private emailListService: EmailListService,
+    private emailService: EmailService
+  ) { }
 
   ngOnInit() {
     this.getEmails();
@@ -27,5 +31,9 @@ export class EmailListComponent implements OnInit {
 
   private getEmailsFailure = (error: HttpErrorResponse) => {
     console.log("The get email list api failed: ", error);
+  }
+
+  onSelect(email): void {
+    this.emailService.setEmail(email);
   }
 }

@@ -1,5 +1,12 @@
-<span>
-  <input type="text" placeholder="Search"/>
-  <button (click)="newEmail()">New</button>
-  <button (click)="markAsRead()">Mark As Read</button>
-</span>
+<section class="topNav">
+  <div class="container-fluid">
+    <div class="row">
+      <ul>
+        <li><span class="glyphicon glyphicon-menu-hamburger hamburger" (click)="toggleSideBar()"></span></li>
+        <li><input matInput type="text" class="searchInput" placeholder="Search Mail and People" /></li>
+        <li><button (click)="newEmail()">New</button></li>
+        <li><button (click)="markAsRead()">Mark As Read</button></li>
+      </ul>
+    </div>
+  </div>
+</section>

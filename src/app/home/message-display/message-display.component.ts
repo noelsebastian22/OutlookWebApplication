@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from 'src/app/services/email/email.service';
 
 @Component({
   selector: 'app-message-display',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageDisplayComponent implements OnInit {
 
-  constructor() { }
+  email: any;
+  constructor(private emailService: EmailService) { }
 
   ngOnInit() {
+    this.emailService.currentMail$.subscribe(value=>{
+      this.email = value;
+    });
   }
 
 }
