@@ -1,5 +1,13 @@
-<ul>
-  <li *ngFor="let directory of directoryList">
-    {{directory.dirName}}
-  </li>
-</ul>
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="unorderedList">
+          <li class="list" *ngFor="let directory of directoryList">
+            {{directory.dirName}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

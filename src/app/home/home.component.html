@@ -4,14 +4,14 @@
     </mat-toolbar>
 
     <mat-sidenav-container class="example-container">
-        <mat-sidenav #sidenav mode="side" class="example-sidenav" [fixedInViewport]="options.fixed"
+        <mat-sidenav #sidenav mode="side" class="example-sidenav col-sm-2" [fixedInViewport]="options.fixed"
             [fixedTopGap]="options.top" [fixedBottomGap]="options.bottom">
             <app-directory-list></app-directory-list>
         </mat-sidenav>
 
-        <mat-sidenav-content>
-            <app-email-list></app-email-list>
-            <app-message-display></app-message-display>
+        <mat-sidenav-content class="col-sm-10">
+            <app-email-list class="col-sm-4"></app-email-list>
+            <app-message-display class="col-sm-8"></app-message-display>
             <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
         </mat-sidenav-content>
     </mat-sidenav-container>

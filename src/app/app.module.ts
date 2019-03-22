@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatSidenavModule, MatTreeModule } from '@angular/material';
+import { MatToolbarModule, MatSidenavModule, MatTreeModule, MatTabsModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,7 +32,8 @@ import { EmailListService } from './services/email-list/email-list.service';
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatTreeModule
+    MatTreeModule,
+    MatTabsModule
   ],
   providers: [
     DirectoryListService,

@@ -1,6 +1,32 @@
-<ul>
-  <li *ngFor="let email of emailList">
-    {{email?.subject}} <br />
-    {{email?.content}}
-  </li>
-</ul>
+<section>
+  <div>
+    <mat-tab-group>
+      <mat-tab class="tab" label="Focused">
+        <div>
+          <ul>
+            <li class="list" *ngFor="let email of emailList">
+              <div>
+                <h2 class="mainHead">{{email?.mailId}}</h2>
+                <p>{{email?.subject}}</p>
+                <p>{{email?.content}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </mat-tab>
+      <mat-tab label="Other">
+        <div>
+          <ul>
+            <li class="list" *ngFor="let email of emailList">
+              <div>
+                <h2 class="mainHead">{{email?.mailId}}</h2>
+                <p>{{email?.subject}}</p>
+                <p>{{email?.content}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>

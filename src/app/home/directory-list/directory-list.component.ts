@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DirectoryListService } from 'src/app/services/directory-list/directory-list.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Directory } from 'src/app/models/directory.model';
