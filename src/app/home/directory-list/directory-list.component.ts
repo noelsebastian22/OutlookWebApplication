@@ -10,7 +10,7 @@ import { Directory } from 'src/app/models/directory.model';
 })
 export class DirectoryListComponent implements OnInit {
 
-  directoryList: Directory;
+  directoryList: Directory[];
 
   constructor(private directoryListService: DirectoryListService) { }
 
@@ -22,7 +22,7 @@ export class DirectoryListComponent implements OnInit {
     this.directoryListService.getDirectoryList().subscribe(this.getDirectoryListSuccess, this.getDirectoryListFailure);
   }
 
-  private getDirectoryListSuccess = (directoryList: Directory) => {
+  private getDirectoryListSuccess = (directoryList: Directory[]) => {
     this.directoryList = directoryList;
   }
 

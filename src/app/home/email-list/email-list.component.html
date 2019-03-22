@@ -1,3 +1,6 @@
-<p>
-  email-list works!
-</p>
+<ul>
+  <li *ngFor="let email of emailList">
+    {{email?.subject}} <br />
+    {{email?.content}}
+  </li>
+</ul>

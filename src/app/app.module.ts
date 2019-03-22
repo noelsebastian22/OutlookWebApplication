@@ -13,6 +13,7 @@ import { MessageDisplayComponent } from './home/message-display/message-display.
 import { EmailComponent } from './home/email-list/email/email.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DirectoryListService } from './services/directory-list/directory-list.service';
+import { EmailListService } from './services/email-list/email-list.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DirectoryListService } from './services/directory-list/directory-list.s
     MatTreeModule
   ],
   providers: [
-    DirectoryListService
+    DirectoryListService,
+    EmailListService
   ],
   bootstrap: [AppComponent]
 })

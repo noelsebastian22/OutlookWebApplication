@@ -12,4 +12,12 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  newEmail():void{
+    alert("Create a new Email.");
+  }
+
+  markAsRead(): void{
+    alert("Mark As Read is clicked.");
+  }
+
 }
