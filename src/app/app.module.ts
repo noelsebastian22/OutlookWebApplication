@@ -14,6 +14,7 @@ import { EmailComponent } from './home/email-list/email/email.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DirectoryListService } from './services/directory-list/directory-list.service';
 import { EmailListService } from './services/email-list/email-list.service';
+import { FocusPipe } from './shared/common/pipes/focus.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EmailListService } from './services/email-list/email-list.service';
     DirectoryListComponent,
     EmailListComponent,
     MessageDisplayComponent,
-    EmailComponent
+    EmailComponent,
+    FocusPipe
   ],
   imports: [
     BrowserModule,
