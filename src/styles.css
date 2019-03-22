@@ -1,3 +1,7 @@
+body{
+    margin:0px;
+}
+
 mat-sidenav-container {
     position: fixed;
     height: 100%;
@@ -6,6 +10,26 @@ mat-sidenav-container {
     min-width: 100%;    
 };
 
-mat-sidenav {
-    background-color: green !important;
-};
+.outlook-sidenav{
+    background-color: #e8e8e8;
+}
+ .mat-drawer.mat-drawer-side {
+    background-color: #e8e8e8;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    padding: 0 0px;
+}
+
+.outlook-header{
+    background-color: black;
+}
+
+.outlook-icon img{
+    width: 64px;
+    float: left;
+}
+
+.header-text{
+    color:white;
+}
