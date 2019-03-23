@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  @Output() toggle = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +19,10 @@ export class NavigationComponent implements OnInit {
 
   markAsRead(): void{
     alert("Mark As Read is clicked.");
+  }
+
+  toggleSideBar():void{
+    this.toggle.emit(true);
   }
 
 }

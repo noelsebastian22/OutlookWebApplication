@@ -1,6 +1,6 @@
 <ng-container>
-    <mat-toolbar class="example-header">
-        <app-navigation></app-navigation>
+    <mat-toolbar class="outlook-header">
+        <app-navigation (toggle)="sidenav.toggle()"></app-navigation>
     </mat-toolbar>
 
     <mat-sidenav-container class="example-container">
@@ -10,9 +10,8 @@
         </mat-sidenav>
 
         <mat-sidenav-content class="col-sm-10">
-            <app-email-list class="col-sm-4"></app-email-list>
+            <app-email-list class="col-sm-4 email-list"></app-email-list>
             <app-message-display class="col-sm-8"></app-message-display>
-            <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </ng-container>

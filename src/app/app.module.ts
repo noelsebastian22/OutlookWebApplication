@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DirectoryListService } from './services/directory-list/directory-list.service';
 import { EmailListService } from './services/email-list/email-list.service';
 import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FocusPipe } from './shared/common/pipes/focus.pipe';
+import { EmailFilterPipe } from './shared/common/pipes/email-filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angul
     DirectoryListComponent,
     EmailListComponent,
     MessageDisplayComponent,
-    EmailComponent
+    EmailComponent,
+    FocusPipe,
+    EmailFilterPipe
   ],
   imports: [
     BrowserModule,

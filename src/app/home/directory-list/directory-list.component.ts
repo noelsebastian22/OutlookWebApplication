@@ -31,7 +31,7 @@ export class DirectoryListComponent implements OnInit {
 
   onChanges(){
     this.searchForm.get('searchInput').valueChanges.subscribe(val => {
-      console.log("the search string is",val);
+      this.directoryListService.setsearchString(val)
     });
   }
 
