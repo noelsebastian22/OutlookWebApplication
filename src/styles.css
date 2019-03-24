@@ -31,9 +31,11 @@ mat-sidenav-content{
 .folderList {
     list-style: none;
     padding: 12px;
+    padding-left: 40px;
+    font-size: 16px;
 }
 
-.folderList .active{
+.activeFolder{
     background-color: #dedede;
     font-weight: bold;
 }
@@ -46,10 +48,6 @@ mat-sidenav-content{
     padding: 0px;
 }
 
-
-.unorderedList .active{
-
-}
 
 html {
     font-size: 14px;
@@ -176,4 +174,21 @@ body{
   .email-list{
     border: 4px solid #f9f8f8;
     height:100%;
+  }
+
+  .email-li{
+      list-style: none;
+  }
+  .delete-email{
+    padding: 18px;
+    font-size: 20px;
+    margin-top: 14px;
+  }
+
+  /* Tab Menu */
+
+  .tab-menu{
+    background-color: #eff6fd;
+    height: 42px;
+
   }

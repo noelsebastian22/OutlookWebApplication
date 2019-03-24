@@ -3,4 +3,5 @@ export class Directory {
     dirName: string;
     dirDesc: string;
     dirOrder: number;
+    selected: boolean;
 }

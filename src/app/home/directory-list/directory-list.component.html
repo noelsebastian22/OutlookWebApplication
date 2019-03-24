@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-sm-12 directory-list-area">
         <ul class="unorderedList">
-          <li class="folderList" *ngFor="let directory of directoryList">
+          <li class="folderList" *ngFor="let directory of directoryList" [ngClass]="directory.selected ? 'activeFolder':'' " (click)="directorySelect(directory)">
             {{directory.dirName}}
           </li>
         </ul>

@@ -10,6 +10,7 @@ export class EmailService {
   private currentEmail = new Subject<any>();
 
   currentMail$ = this.currentEmail.asObservable();
+  // deletedMail
 
   constructor() { }
 

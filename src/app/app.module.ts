@@ -17,6 +17,7 @@ import { EmailListService } from './services/email-list/email-list.service';
 import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FocusPipe } from './shared/common/pipes/focus.pipe';
 import { EmailFilterPipe } from './shared/common/pipes/email-filter.pipe';
+import { TabMenuComponent } from './home/tab-menu/tab-menu.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { EmailFilterPipe } from './shared/common/pipes/email-filter.pipe';
     MessageDisplayComponent,
     EmailComponent,
     FocusPipe,
-    EmailFilterPipe
+    EmailFilterPipe,
+    TabMenuComponent
   ],
   imports: [
     BrowserModule,

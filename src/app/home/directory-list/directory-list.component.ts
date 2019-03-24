@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { DirectoryListService } from 'src/app/services/directory-list/directory-list.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Directory } from 'src/app/models/directory.model';
@@ -10,6 +10,9 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./directory-list.component.css']
 })
 export class DirectoryListComponent implements OnInit {
+
+
+  // @Output() currentDirectory = new EventEmitter<any>();
 
   directoryList: Directory[];
 
@@ -29,7 +32,7 @@ export class DirectoryListComponent implements OnInit {
     console.warn(this.searchForm.value);
   }
 
-  onChanges(){
+  onChanges() {
     this.searchForm.get('searchInput').valueChanges.subscribe(val => {
       this.directoryListService.setsearchString(val)
     });
@@ -45,5 +48,17 @@ export class DirectoryListComponent implements OnInit {
 
   private getDirectoryListFailure = (error: HttpErrorResponse) => {
     console.log("The get directory list api failed: ", error);
+  }
+
+  directorySelect(directory) {
+    this.directoryListService.setcurrentDirectory(directory)
+    this.directoryList.forEach(dir => {
+      if(dir.dirId==directory.dirId){
+        dir.selected=true;
+      }
+      else{
+        dir.selected=false;
+      }
+    })
   }
 }
