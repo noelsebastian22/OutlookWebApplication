@@ -1,3 +1,15 @@
-<p>
-  tab-menu works!
-</p>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-2">
+      <label class="container">
+        <input type="checkbox" [(ngModel)]="theCheckbox" data-md-icheck (change)="toggleVisibility($event)" />
+        <span>Filter By Flag</span>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="col-sm-2 mark-read" (click)="markAsRead()">
+      <i class="fa fa-envelope-o" aria-hidden="true"> </i>
+      <span class="mark-text">Mark all as read</span>
+    </div>
+  </div>
+</div>

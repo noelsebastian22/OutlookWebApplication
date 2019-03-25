@@ -1,42 +1,47 @@
 [
 	{
-		"muID":1,
+		"muID": 1,
 		"mailId": "Anoop.Warrier@gmail.com",
 		"unread": true,
-		"subject" : "Training Program",
-		"content" : "About Microsoft Virtual Academy. Microsoft Virtual Academy provides free online training by world-class experts to help you build your technical skills and advance your career. Make it your destination of choice to get started on the latest Microsoft technologies and join this vibrant community.",
-		"sentTime": "11/02/2019"
+		"subject": "Training Program",
+		"content": "About Microsoft Virtual Academy. Microsoft Virtual Academy provides free online training by world-class experts to help you build your technical skills and advance your career. Make it your destination of choice to get started on the latest Microsoft technologies and join this vibrant community.",
+		"sentTime": "11/02/2019",
+		"flagged": true
 	},
 	{
-		"muID":2,
+		"muID": 2,
 		"mailId": "vishnucvarrier@gmail.com",
 		"unread": true,
-		"subject" : "Empower your future",
-		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups, servicing an active community of thousands across Microsoft",
-		"sentTime": "10/02/2019"
+		"subject": "Empower your future",
+		"content": "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups, servicing an active community of thousands across Microsoft",
+		"sentTime": "10/02/2019",
+		"flagged": false
 	},
 	{
-		"muID":3,
-		"mailId": "noel.sebastian@gmail.com",
+		"muID": 3,
+		"mailId": "john.doe@gmail.com",
 		"unread": false,
-		"subject" : "Empower your future",
-		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups, servicing an active community of thousands across Microsoft",
-		"sentTime": "09/02/2019"
+		"subject": "Countdown to Gratitude Week – Two days to go!",
+		"content": "We're dedicating an entire week to being grateful for everything we have in our lives. Together, we'll raise our vibrations and attract happiness, positivity and a deeper appreciation, into our lives! So here's what you can expect :) Everyday until this Friday, Dec 7th, I'll be releasing videos with inspirational messages, great gratitude tips and I'll also be giving away some very special surprises. I encourage you to join in on the fun and visit this blog each day to make a declaration of what you're grateful for. It can be something big, small, personal or worldly! It doesn't matter, just take the step, make the effort and get involved.This will not only make you feel AWESOME, but it'll inspire others from all over the world to share what they're thankful for.",
+		"sentTime": "09/02/2019",
+		"flagged": false
 	},
 	{
-		"muID":4,
+		"muID": 4,
 		"mailId": "abrwarrier@gmail.com",
 		"unread": false,
-		"subject" : "Empower your future",
-		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups, servicing an active community of thousands across Microsoft",
-		"sentTime": "01/02/2019"
+		"subject": "Your Free Marketing Consultation",
+		"content": "Hi John, \n Thank you for showing interest in ThriveHive’s Guided Marketing Platform. By taking this initial step, you are already well on your way to meeting your marketing goals AND streamlining your marketing process. \n \n For our prospective customers, we offer a FREE, one-hour marketing consultation with one of our marketing experts who will conduct an audit of your business. Not only will we give you easy to implement tips for your business, there are also no obligations to sign up after the consultation! \n\nPlease let us know if you would like us to help you find a marketing solution for your business. Give us a call at (617) 396-7177. \n\nBest regards,\n\nThe ThriveHive Team",
+		"sentTime": "01/02/2019",
+		"flagged": false
 	},
 	{
-		"muID":5,
+		"muID": 5,
 		"mailId": "sayoojvr@gmail.com",
 		"unread": false,
-		"subject" : "Empower your future",
-		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups, servicing an active community of thousands across Microsoft",
-		"sentTime": "01/01/2019"
+		"subject": "Following up on my call",
+		"content": "Hi John,\n\n I called you late last week in response to your recent download of the ThriveHive Marketing Guide. I have attached it here in case you had any difficulties accessing it.\n\n \n\nIf you are currently looking for better ways to continue to market your business and generate leads, I believe that ThriveHive may be a great solution for you",
+		"sentTime": "01/01/2019",
+		"flagged": false
 	}
 ]

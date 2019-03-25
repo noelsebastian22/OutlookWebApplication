@@ -1,0 +1,20 @@
+<div>
+    <ul>
+      <li class="email-li" *ngFor="let email of (sentEmailList | emailFilter : searchString )">
+        <div class="col-sm-12">
+          <div class="col-sm-10">
+            <div (click)="onSelect(email)">
+              <h2 class="mainHead">{{email?.mailId}}</h2>
+              <p>{{email?.subject}}</p>
+              <p class="mailContent">{{email?.content}}</p>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="delete-email" (click)="deleteEmail(email)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>

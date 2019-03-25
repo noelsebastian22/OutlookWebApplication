@@ -1,3 +1,63 @@
-<p>
-  email works!
-</p>
+<mat-tab-group [disableRipple]="true">
+  <mat-tab class="tab" label="Focused">
+    <div class="custom-select" style="width:200px;">
+      <select>
+        <option value="0">Filter:</option>
+        <option value="1">Audi</option>
+      </select>
+    </div>
+    <div>
+      <ul>
+        <li class="email-li" *ngFor="let email of (emailList | filterFlag: flag | focus  | emailFilter : searchString  )">
+          <div class="col-sm-12">
+            <div class="col-sm-10">
+              <div (click)="onSelect(email)">
+                <h2 class="mainHead">{{email?.mailId}}</h2>
+                <p [ngClass]="email.unread === true ? 'mailSubject':''">{{email?.subject}}</p>
+                <p class="mailContent">{{email?.content}}</p>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="delete-email" (click)="deleteEmail(email)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="email-flag" [ngClass]="email.flagged === true ? 'flagActive':''" (click)="flagEmail(email)">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </mat-tab>
+  <mat-tab class="tab" label="Other">
+    <div>
+      <ul>
+        <li class="email-li" *ngFor="let email of (emailList | filterFlag: flag | emailFilter : searchString )">
+          <div class="col-sm-12">
+            <div class="col-sm-10">
+              <div (click)="onSelect(email)">
+                <h2 class="mainHead">{{email?.mailId}}</h2>
+                <p [ngClass]="email.unread === true ? 'mailSubject':''">{{email?.subject}}</p>
+                <p class="mailContent">{{email?.content}}</p>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="delete-email" (click)="deleteEmail(email)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="email-flag" [ngClass]="email.flagged === true ? 'flagActive':''" (click)="flagEmail(email)">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

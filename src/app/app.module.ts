@@ -18,6 +18,11 @@ import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angul
 import { FocusPipe } from './shared/common/pipes/focus.pipe';
 import { EmailFilterPipe } from './shared/common/pipes/email-filter.pipe';
 import { TabMenuComponent } from './home/tab-menu/tab-menu.component';
+import { DeletedEmailsComponent } from './home/email-list/deleted-emails/deleted-emails.component';
+import { FilterFlagPipe } from './shared/common/pipes/filter-flag.pipe';
+import { SentItemsComponent } from './home/email-list/sent-items/sent-items.component';
+import { DraftsComponent } from './home/email-list/drafts/drafts.component';
+import { JunkEmailComponent } from './home/email-list/junk-email/junk-email.component';
 
 
 @NgModule({
@@ -31,7 +36,12 @@ import { TabMenuComponent } from './home/tab-menu/tab-menu.component';
     EmailComponent,
     FocusPipe,
     EmailFilterPipe,
-    TabMenuComponent
+    TabMenuComponent,
+    DeletedEmailsComponent,
+    FilterFlagPipe,
+    SentItemsComponent,
+    DraftsComponent,
+    JunkEmailComponent
   ],
   imports: [
     BrowserModule,

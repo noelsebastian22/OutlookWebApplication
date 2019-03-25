@@ -1,6 +1,39 @@
-<section>
-  <h2>Subject: {{email?.subject}}</h2>
-  <div>
-    Content : {{email?.content}}
-  </div>
-</section>
+<div *ngIf="email">
+  <table width="100%">
+    <tbody>
+      <tr>
+        <td class="wrapper" width="600" align="center">
+          <!-- Header image -->
+          <table class="section header" cellpadding="0" cellspacing="0" width="600">
+            <tr>
+              <td class="column">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td align="left">
+                        <img src="./assets/images/outlook.png" alt="picsum" width="600" height="200" />
+                        <h2>From:{{email?.mailId}}</h2>
+                        <p style="text-align:justify;" class="subject">{{email?.subject}}</p>
+                        <p style="text-align:justify;">{{email?.content}}
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<section *ngIf="!email">
+    <div class="display-image center">
+      <img src="./assets/images/background_image .jpg">
+    </div>
+    <div class="display-text">
+      Select an item to read.
+    </div>
+  </section>

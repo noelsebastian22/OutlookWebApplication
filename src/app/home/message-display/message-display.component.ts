@@ -14,7 +14,6 @@ export class MessageDisplayComponent implements OnInit {
   ngOnInit() {
     this.emailService.currentMail$.subscribe(value=>{
       this.email = value;
-      
     });
   }
 

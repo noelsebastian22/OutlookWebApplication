@@ -44,6 +44,7 @@ export class DirectoryListComponent implements OnInit {
 
   private getDirectoryListSuccess = (directoryList: Directory[]) => {
     this.directoryList = directoryList;
+    this.directoryListService.setcurrentDirectory(directoryList[0])
   }
 
   private getDirectoryListFailure = (error: HttpErrorResponse) => {

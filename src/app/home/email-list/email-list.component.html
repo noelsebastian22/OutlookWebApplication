@@ -1,72 +1,18 @@
 <section>
-  <div *ngIf="currentDirectory?.dirId===1" class="inboxContainer">
-    <mat-tab-group [disableRipple]="true">
-      <mat-tab class="tab" label="Focused">
-        <div>
-          <ul>
-            <li class="email-li" *ngFor="let email of (emailList | focus | emailFilter : searchString )">
-              <div class="col-sm-12">
-                <div class="col-sm-10">
-                  <div (click)="onSelect(email)">
-                    <h2 class="mainHead">{{email?.mailId}}</h2>
-                    <p [ngClass]="email.unread === true ? 'mailSubject':''">{{email?.subject}}</p>
-                    <p class="mailContent">{{email?.content}}</p>
-                  </div>
-                </div>
-                <div class="col-sm-2">
-                  <div class="delete-email" (click)="deleteEmail(email)">
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </mat-tab>
-      <mat-tab class="tab" label="Other">
-        <div>
-          <ul>
-            <li class="email-li" *ngFor="let email of (emailList | emailFilter : searchString )">
-              <div class="col-sm-12">
-                <div class="col-sm-10">
-                  <div (click)="onSelect(email)">
-                    <h2 class="mainHead">{{email?.mailId}}</h2>
-                    <p [ngClass]="email.unread === true ? 'mailSubject':''">{{email?.subject}}</p>
-                    <p class="mailContent">{{email?.content}}</p>
-                  </div>
-                </div>
-                <div class="col-sm-2">
-                  <div class="delete-email" (click)="deleteEmail(email)">
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </mat-tab>
-    </mat-tab-group>
+  <!-- <div *ngIf="currentDirectory?.dirId===1" class="inboxContainer">
+    <app-email [emailList]="emailList" [searchString]="searchString"></app-email>
   </div>
-  <div *ngIf="currentDirectory?.dirId!==1 && currentDirectory?.dirId" class="other-directories">
-    <div>
-      <ul>
-        <li class="email-li" *ngFor="let email of (otherList | emailFilter : searchString )">
-          <div class="col-sm-12">
-            <div class="col-sm-10">
-              <div (click)="onSelect(email)">
-                <h2 class="mainHead">{{email?.mailId}}</h2>
-                <p [ngClass]="email.unread === true ? 'mailSubject':''">{{email?.subject}}</p>
-                <p class="mailContent">{{email?.content}}</p>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="delete-email">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div *ngIf="currentDirectory?.dirId===2" class="other-directories">
+    <app-sent-items [searchString]="searchString"></app-sent-items>
   </div>
+  <div *ngIf="currentDirectory?.dirId===3" class="other-directories">
+    <app-drafts></app-drafts>
+  </div>
+  <div *ngIf="currentDirectory?.dirId===4" class="other-directories">
+    <app-deleted-emails [searchString]="searchString"></app-deleted-emails>
+  </div>
+  <div *ngIf="currentDirectory?.dirId===5" class="other-directories">
+    <app-junk-email></app-junk-email>
+  </div> -->
+  <router-outlet></router-outlet>
 </section>

@@ -1,0 +1,60 @@
+  /* A simple css reset */
+  body,table,thead,tbody,tr,td,img {
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+/* Add some padding for small screens */
+.wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+    line-height: 1.6;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+p,a,li {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+@media only screen and (max-width: 620px) {
+
+    .wrapper .section {
+        width: 100%;
+    }
+
+    .wrapper .column {
+        width: 100%;
+        display: block;
+    }
+}
+.subject{
+    font-size: 20px;
+    font-weight: bold;
+}
+.center {
+    display: block;
+    width: 50%;
+    padding: 220px 0 0 349px;
+  }
+
+  .display-text{
+    font-size: 20px;
+    padding-left: 342px;
+    padding-top: 20px;
+    font-weight: bold;
+  }

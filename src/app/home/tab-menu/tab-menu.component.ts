@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailListService } from 'src/app/services/email-list/email-list.service';
 
 @Component({
   selector: 'app-tab-menu',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabMenuComponent implements OnInit {
 
-  constructor() { }
+  marked = false;
+  theCheckbox = false;
+  constructor(
+    private emailListService:EmailListService
+  ) { }
 
   ngOnInit() {
+  }
+
+  toggleVisibility(e){
+    this.marked= e.target.checked;
+    this.emailListService.setflagged(this.marked);
+  }
+
+  markAsRead(){
+    this.emailListService.setMarkRead(true);
   }
 
 }

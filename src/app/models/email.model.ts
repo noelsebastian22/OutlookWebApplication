@@ -1,8 +1,9 @@
 export class Email {
-    muId:number;
+    muId: number;
     mailId: string;
     unread: boolean;
     subject: string;
     content: string;
     sentTime: number;
+    flagged: boolean;
 }

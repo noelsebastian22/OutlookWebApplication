@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailListService } from 'src/app/services/email-list/email-list.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { EmailService } from 'src/app/services/email/email.service';
 import { DirectoryListService } from 'src/app/services/directory-list/directory-list.service';
 import { Directory } from 'src/app/models/directory.model';
-import { Email } from 'src/app/models/email.model';
 
 @Component({
   selector: 'app-email-list',
@@ -14,14 +12,12 @@ import { Email } from 'src/app/models/email.model';
 export class EmailListComponent implements OnInit {
 
   emailList: any[];
-  otherList: Email[];
   searchString: any;
   currentDirectory: Directory;
-  deletedFiles: Email[] = [];
+  // deletedFiles: Email[] = [];
 
   constructor(
     private emailListService: EmailListService,
-    private emailService: EmailService,
     private directoryListService: DirectoryListService
   ) { }
 
@@ -41,7 +37,7 @@ export class EmailListComponent implements OnInit {
     if (this.currentDirectory.dirId === 1) {
 
     } else if (this.currentDirectory.dirId === 4) {
-      this.otherList = this.deletedFiles
+      // this.otherList = this.deletedFiles
     }
   }
   getCurrentDirectoryFailure = (error: HttpErrorResponse) => {
@@ -61,8 +57,14 @@ export class EmailListComponent implements OnInit {
 
 
   private getEmails(): void {
-    this.emailListService.getEmailList()
-      .subscribe(this.getEmailsSuccess, this.getEmailsFailure);
+    let savedEmailList = window.localStorage.getItem("emailList");
+    if (savedEmailList) {
+      this.emailListService.deletedFiles = JSON.parse(window.localStorage.getItem("deletedFiles"));
+      this.emailList = JSON.parse(window.localStorage.getItem("emailList"));
+    } else {
+      this.emailListService.getEmailList()
+        .subscribe(this.getEmailsSuccess, this.getEmailsFailure);
+    }
   }
 
   private getEmailsSuccess = (emails: any[]) => {
@@ -73,13 +75,4 @@ export class EmailListComponent implements OnInit {
     console.log("The get email list api failed: ", error);
   }
 
-  onSelect(email): void {
-    this.emailService.setEmail(email);
-  }
-
-  deleteEmail(email) {
-    this.emailList.splice(this.emailList.indexOf(email), 1);
-    this.deletedFiles.push(email);
-    console.log("deleted email", this.deletedFiles);
-  }
 }

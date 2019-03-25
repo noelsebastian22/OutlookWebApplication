@@ -11,7 +11,9 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.toggleSideBar();
   }
+  
 
   newEmail():void{
     alert("Create a new Email.");

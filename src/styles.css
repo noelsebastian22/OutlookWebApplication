@@ -183,7 +183,30 @@ body{
     padding: 18px;
     font-size: 20px;
     margin-top: 14px;
+    cursor: pointer;
   }
+
+  .email-flag {
+    padding: 18px;
+    font-size: 20px;
+    margin-top: 14px;
+    cursor: pointer;
+  }
+  .flagActive{
+    color: #d72a2a;
+  }
+
+  .mailContent {
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.mailSubject{
+    color: blue;
+}
 
   /* Tab Menu */
 
@@ -192,3 +215,20 @@ body{
     height: 42px;
 
   }
+
+  /* Filter component */
+  .custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /*style the arrow inside the select element:*/
+  
