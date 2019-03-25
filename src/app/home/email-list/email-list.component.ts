@@ -69,6 +69,17 @@ export class EmailListComponent implements OnInit {
 
   private getEmailsSuccess = (emails: any[]) => {
     this.emailList = emails;
+    this.setUnreadCount();
+  }
+  setUnreadCount() {
+    let unreadCount = 0
+    this.emailList.forEach(item => {
+      if (item.unread) {
+        unreadCount = unreadCount + 1;
+      }
+    })
+    console.log(unreadCount)
+    this.emailListService.setunreadCount(unreadCount);
   }
 
   private getEmailsFailure = (error: HttpErrorResponse) => {

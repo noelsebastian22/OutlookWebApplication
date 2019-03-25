@@ -12,8 +12,18 @@ export class EmailListService {
     markRead = new Subject<boolean>();
     markRead$ = this.markRead.asObservable();
 
+    unreadCount = new Subject<number>();
+    unreadCount$=this.unreadCount.asObservable();
+
     deletedFiles: Email[] = [];
     constructor(private http: HttpClient) {
+    }
+
+    setunreadCount(count:number):void{
+        this.unreadCount.next(count)
+    }
+    getunreadCount():Observable<number>{
+        return this.unreadCount;
     }
 
     setMarkRead(mark:boolean):void{

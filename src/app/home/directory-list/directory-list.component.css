@@ -1,1 +1,5 @@
 @import url('../../../styles.css');
+.unread-count{
+    float: right;
+    color: #2875da;
+}

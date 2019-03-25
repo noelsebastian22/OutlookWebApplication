@@ -24,6 +24,7 @@ export class TabMenuComponent implements OnInit {
 
   markAsRead(){
     this.emailListService.setMarkRead(true);
+    this.emailListService.setunreadCount(0);
   }
 
 }

@@ -12,6 +12,7 @@
         <ul class="unorderedList">
           <li class="folderList" *ngFor="let directory of directoryList" [ngClass]="directory.selected ? 'activeFolder':'' " (click)="directorySelect(directory)">
             {{directory.dirName}}
+            <div *ngIf="directory.dirId==1 && unreadCount>0" class="unread-count">{{unreadCount}}</div>
           </li>
         </ul>
       </div>

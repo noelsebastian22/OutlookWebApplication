@@ -3,6 +3,7 @@ import { DirectoryListService } from 'src/app/services/directory-list/directory-
 import { HttpErrorResponse } from '@angular/common/http';
 import { Directory } from 'src/app/models/directory.model';
 import { FormGroup, FormControl } from '@angular/forms';
+import { EmailListService } from 'src/app/services/email-list/email-list.service';
 
 @Component({
   selector: 'app-directory-list',
@@ -15,14 +16,19 @@ export class DirectoryListComponent implements OnInit {
   // @Output() currentDirectory = new EventEmitter<any>();
 
   directoryList: Directory[];
+  unreadCount: number = 0;
 
-  constructor(private directoryListService: DirectoryListService) {
+  constructor(
+    private directoryListService: DirectoryListService,
+    private emailListService: EmailListService
+  ) {
 
   }
 
   ngOnInit() {
     this.getDirectoryList();
     this.onChanges();
+    this.getUnreadCount();
   }
 
   searchForm = new FormGroup({
@@ -30,6 +36,14 @@ export class DirectoryListComponent implements OnInit {
   });
   onSubmit() {
     console.warn(this.searchForm.value);
+  }
+
+  getUnreadCount() {
+    this.emailListService.unreadCount
+      .subscribe(count => {
+        this.unreadCount = count;
+      })
+      console.log(this.unreadCount);
   }
 
   onChanges() {
@@ -54,11 +68,11 @@ export class DirectoryListComponent implements OnInit {
   directorySelect(directory) {
     this.directoryListService.setcurrentDirectory(directory)
     this.directoryList.forEach(dir => {
-      if(dir.dirId==directory.dirId){
-        dir.selected=true;
+      if (dir.dirId == directory.dirId) {
+        dir.selected = true;
       }
-      else{
-        dir.selected=false;
+      else {
+        dir.selected = false;
       }
     })
   }

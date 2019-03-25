@@ -24,16 +24,15 @@ export class EmailComponent implements OnInit {
     this.markAsRead();
   }
 
-  markAsRead(){
+  markAsRead() {
     this.emailListService.getMarkRead()
-    .subscribe(mark=>{
-      if(mark){
-        this.emailList.forEach(mail=>{
-          mail.unread=false;
-        })
-      }
-      console.log(this.emailList)
-    })
+      .subscribe(mark => {
+        if (mark) {
+          this.emailList.forEach(mail => {
+            mail.unread = false;
+          })
+        }
+      })
   }
 
   getFlagged() {
@@ -53,11 +52,23 @@ export class EmailComponent implements OnInit {
     if (email.unread) {
       email.unread = false;
     }
+    this.setUnreadCount();
     this.emailService.setEmail(email);
     window.localStorage.setItem("emailList", JSON.stringify(this.emailList));
   }
 
+  setUnreadCount() {
+    let unreadCount = 0
+    this.emailList.forEach(item => {
+      if (item.unread) {
+        unreadCount = unreadCount + 1;
+      }
+    })
+    this.emailListService.setunreadCount(unreadCount);
+  }
+
   deleteEmail(email) {
+    this.setUnreadCount();
     this.emailList.splice(this.emailList.indexOf(email), 1);
     this.emailListService.deletedFiles.push(email);
     window.localStorage.setItem("deletedFiles", JSON.stringify(this.emailListService.deletedFiles))
